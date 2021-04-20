@@ -2,10 +2,7 @@ package web;
 
 import business.exceptions.UserException;
 
-import business.persistence.BottomMapper;
-import business.persistence.Database;
-import business.persistence.ToppingMapper;
-import business.persistence.UserMapper;
+import business.persistence.*;
 import web.commands.*;
 
 import java.io.IOException;
@@ -19,13 +16,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "FrontController", urlPatterns = {"/fc/*"})
-public class FrontController extends HttpServlet
-{
+public class FrontController extends HttpServlet {
     private final static String USER = "root";
     private final static String PASSWORD = "1234";
     private final static String URL = "jdbc:mysql://localhost:3306/cupcake?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
     public static Database database;
+
+    public FrontController() throws UserException {
+    }
 
     public void init() throws ServletException {
         // Initialize database connection
@@ -38,6 +37,9 @@ public class FrontController extends HttpServlet
         }
 
         // Initialize whatever global datastructures needed here:
+
+        
+
 
         ToppingMapper toppingMapper = new ToppingMapper(database);
         try {
@@ -54,7 +56,6 @@ public class FrontController extends HttpServlet
             e.printStackTrace();
         }
     }
-
 
 
 

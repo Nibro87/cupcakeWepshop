@@ -16,29 +16,16 @@
     </head>
     <body>
 
+    <form name="login" action="${pageContext.request.contextPath}/fc/registercommand" method="POST">
     <div class="container">
         <h2>Opret bruger</h2>
 
         <form action="/action_page.php">
             <div class="form-group row ">
-                <label for="fornavn">Fornavn:</label>
-                <input type="fornavn" class="col-md-6 .offset-md-3 col-form-label" id="fornavn" placeholder="Indtast fornavn" name="fornavn">
+                <label for="email">Fornavn:</label>
+                <input type="email" class="col-md-6 .offset-md-3 col-form-label" id="email" placeholder="Indtast email" name="email">
             </div>
 
-            <div class="form-group row">
-                <label for="efternavn">Efternavn:</label>
-                <input type="efternavn" class="col-md-6 .offset-md-3 col-form-label" id="efternavn" placeholder="Indtast efternavn" name="efternavn">
-            </div>
-
-            <div class="form-group row">
-                <label for="adresse">Adresse:</label>
-                <input type="adresse" class="col-md-6 .offset-md-3 col-form-label" id="adresse" placeholder="Indtast Adresse" name="adresse">
-            </div>
-
-            <div class="form-group row">
-                <label for="by">BY:</label>
-                <input type="by" class="col-md-6 .offset-md-3 col-form-label" id="by" placeholder="Indtast by" name="by">
-            </div>
 
             <div class="form-group row">
                 <label for="psw">Password:</label>

@@ -30,7 +30,7 @@
 
         </select>
 
-        <select class="form-select form-select-lg mb-3"  aria-label="Bund" id="topping">
+        <select class="form-select form-select-lg mb-3"  aria-label="Bund" id="bottom">
             <option selected>Vælg bund</option>
             <c:forEach var="bottom" items="${applicationScope.bottomList}">
                 <option value="topping">${bottom.name} &nbsp;&nbsp; ${bottom.price}Kr. </option>
