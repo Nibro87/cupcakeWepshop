@@ -21,13 +21,13 @@
 <nav class="topnav bg-secondary">
     <a class="active text-white" href="<%=request.getContextPath()%>">Home</a>
 
-    <a class="nav-link text-white " href="${pageContext.request.contextPath}/cupcakes">Cubcakes</a>
+    <a class="nav-link text-white " href="${pageContext.request.contextPath}/fc/cupcakes">Cupcakes</a>
 
-    <a class="nav-link text-white " href="${pageContext.request.contextPath}/shoppingcart">Indkøbskurv</a>
+    <a class="nav-link text-white " href="${pageContext.request.contextPath}/fc/shoppingcart">Indkøbskurv</a>
 
-    <a class="nav-link text-white" href="${pageContext.request.contextPath}/profil">Profil</a>
+    <a class="nav-link text-white" href="${pageContext.request.contextPath}/fc/profil">Profil</a>
 
-    <a class="nav-link text-white" href="${pageContext.request.contextPath}/createprofil">Opret profil</a>
+    <a class="nav-link text-white" href="${pageContext.request.contextPath}/fc/createprofil">Opret profil</a>
 
     <div class="login-container">
         <form action="${pageContext.request.contextPath}">

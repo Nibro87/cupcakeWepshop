@@ -16,20 +16,30 @@
     </head>
     <body>
 
+
+    <form method="POST" action="">
     <div class="container">
 
         <select class="form-select form-select-lg mb-3"  aria-label="Bund">
             <option selected>Vælg bund</option>
-            <option value="1">Vanilje</option>
-            <option value="2">Brownie</option>
-            <option value="3">Gulerods</option>
+            <option value="1">Chocolate</option>
+            <option value="2">vanilla</option>
+            <option value="3">Nutmeg</option>
+            <option value="4">Pistacio</option>
+            <option value="5">Almond</option>
         </select>
 
         <select class="form-select form-select-lg mb-3" aria-label="Topping">
             <option selected>Vælg topping</option>
-            <option value="1">Buttercream</option>
-            <option value="2">Chokolade mousse</option>
-            <option value="3">Glassur</option>
+            <option value="1">Chocolate</option>
+            <option value="2">Blueberry</option>
+            <option value="3">Rasberry</option>
+            <option value="4">Crispy</option>
+            <option value="5">Strawberry</option>
+            <option value="6">Rum/Raisin</option>
+            <option value="7">Orange</option>
+            <option value="8">Lemon</option>
+            <option value="9">Blue cheese</option>
         </select>
 
         <select class="form-select form-select-lg mb-3" aria-label="antal">
@@ -47,7 +57,7 @@
 
 
 
-
+    </form>
 
     </body>
     </html>

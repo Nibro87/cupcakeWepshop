@@ -11,10 +11,7 @@
 
   </welcome-file-list>
 
-  <servlet-mapping>
-    <servlet-name>Cupcakes</servlet-name>
-    <url-pattern>/cupcakes</url-pattern>
-  </servlet-mapping>
+  
 
   <session-config>
   <session-timeout>
