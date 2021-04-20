@@ -22,25 +22,21 @@
     <div class="container">
 
         <select class="form-select form-select-lg mb-3"  aria-label="Bund" id="topping">
-            <option selected>Vælg bund</option>
+            <option selected>Vælg topping</option>
           <c:forEach var="toppings" items="${applicationScope.toppingsList}">
-              <option value="topping">${toppings.name}</option>
+              <option value="topping">${toppings.name} &nbsp;&nbsp; ${toppings.price}Kr. </option>
           </c:forEach>
 
 
         </select>
 
-        <select class="form-select form-select-lg mb-3" aria-label="Topping">
-            <option selected>Vælg topping</option>
-            <option value="1">Chocolate</option>
-            <option value="2">Blueberry</option>
-            <option value="3">Rasberry</option>
-            <option value="4">Crispy</option>
-            <option value="5">Strawberry</option>
-            <option value="6">Rum/Raisin</option>
-            <option value="7">Orange</option>
-            <option value="8">Lemon</option>
-            <option value="9">Blue cheese</option>
+        <select class="form-select form-select-lg mb-3"  aria-label="Bund" id="topping">
+            <option selected>Vælg bund</option>
+            <c:forEach var="bottom" items="${applicationScope.bottomList}">
+                <option value="topping">${bottom.name} &nbsp;&nbsp; ${bottom.price}Kr. </option>
+            </c:forEach>
+
+
         </select>
 
         <select class="form-select form-select-lg mb-3" aria-label="antal">

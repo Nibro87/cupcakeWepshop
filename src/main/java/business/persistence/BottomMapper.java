@@ -1,10 +1,9 @@
 package business.persistence;
 
-import business.entities.Cupcake;
+import business.entities.Bottom;
 import business.entities.Topping;
 import business.exceptions.UserException;
 
-import java.awt.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,31 +11,31 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CupcakeMapper {
+public class BottomMapper {
 
     private Database database;
 
-    public CupcakeMapper(Database database) {
+    public BottomMapper(Database database) {
         this.database = database;
     }
 
 
-    public  List<Topping> getAllToppings() throws UserException {
+    public  List<Bottom> getAllTBottoms() throws UserException {
 
-        List<Topping> ToppingsList = new ArrayList<>();
+        List<Bottom> BottomList = new ArrayList<>();
 
         try (Connection connection = database.connect()) {
-            String sql = "SELECT * FROM topping";
+            String sql = "SELECT * FROM bottom";
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ResultSet rs = ps.executeQuery();
 
                 while (rs.next()) {
 
-                    String topping = rs.getString("topping");
+                    String name = rs.getString("bottom");
                     int price = rs.getInt("price");
 
 
-                    ToppingsList.add(new Topping(topping,price));
+                    BottomList.add(new Bottom(name,price));
                 }
 
 
@@ -46,6 +45,6 @@ public class CupcakeMapper {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return ToppingsList;
+        return BottomList;
     }
 }

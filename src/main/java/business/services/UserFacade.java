@@ -1,9 +1,12 @@
 package business.services;
 
+import business.entities.Bottom;
 import business.entities.Topping;
 import business.entities.User;
-import business.persistence.CupcakeMapper;
+
+import business.persistence.BottomMapper;
 import business.persistence.Database;
+import business.persistence.ToppingMapper;
 import business.persistence.UserMapper;
 import business.exceptions.UserException;
 
@@ -12,7 +15,8 @@ import java.util.List;
 public class UserFacade
 {
     UserMapper userMapper;
-    CupcakeMapper cupcakeMapper;
+    ToppingMapper toppingMapper;
+    BottomMapper bottomMapper;
 
     public UserFacade(Database database)
     {
@@ -32,7 +36,12 @@ public class UserFacade
     }
 
     public List<Topping> getAllToppings() throws UserException{
-        return cupcakeMapper.getAllToppings();
+        return toppingMapper.getAllToppings();
+
+    }
+
+    public List<Bottom> getAllBottom() throws UserException{
+        return bottomMapper.getAllTBottoms();
 
     }
 
