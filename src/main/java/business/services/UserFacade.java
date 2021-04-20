@@ -1,13 +1,18 @@
 package business.services;
 
+import business.entities.Topping;
 import business.entities.User;
+import business.persistence.CupcakeMapper;
 import business.persistence.Database;
 import business.persistence.UserMapper;
 import business.exceptions.UserException;
 
+import java.util.List;
+
 public class UserFacade
 {
     UserMapper userMapper;
+    CupcakeMapper cupcakeMapper;
 
     public UserFacade(Database database)
     {
@@ -25,5 +30,11 @@ public class UserFacade
         userMapper.createUser(user);
         return user;
     }
+
+    public List<Topping> getAllToppings() throws UserException{
+        return cupcakeMapper.getAllToppings();
+
+    }
+
 
 }

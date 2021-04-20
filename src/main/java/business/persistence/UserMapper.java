@@ -4,6 +4,7 @@ import business.exceptions.UserException;
 import business.entities.User;
 
 import java.sql.*;
+import java.util.List;
 
 public class UserMapper
 {
@@ -75,5 +76,6 @@ public class UserMapper
             throw new UserException("Connection to database could not be established");
         }
     }
+
 
 }

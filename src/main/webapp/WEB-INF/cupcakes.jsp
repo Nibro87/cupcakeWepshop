@@ -1,5 +1,6 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:wrapper title="cubcakes">
 
@@ -20,13 +21,13 @@
     <form method="POST" action="">
     <div class="container">
 
-        <select class="form-select form-select-lg mb-3"  aria-label="Bund">
+        <select class="form-select form-select-lg mb-3"  aria-label="Bund" id="topping">
             <option selected>Vælg bund</option>
-            <option value="1">Chocolate</option>
-            <option value="2">vanilla</option>
-            <option value="3">Nutmeg</option>
-            <option value="4">Pistacio</option>
-            <option value="5">Almond</option>
+          <c:forEach var="toppings" items="${applicationScope.toppingsList}">
+              <option value="topping">${toppings.name}</option>
+          </c:forEach>
+
+
         </select>
 
         <select class="form-select form-select-lg mb-3" aria-label="Topping">
