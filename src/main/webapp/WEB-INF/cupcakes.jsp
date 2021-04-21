@@ -51,7 +51,9 @@
                     <option value="5">5</option>
                 </select>
 
-                <button class="btn btn-primary" type="submit">Gå til kurv</button>
+                <button class="btn btn-primary" type="submit">Godkent</button>
+
+
             </div>
 
 
