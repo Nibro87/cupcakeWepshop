@@ -33,7 +33,7 @@
 
 
         <a class="nav-link text-white " href="${pageContext.request.contextPath}/fc/cupcakes">Cupcakes</a>
-        <a class="nav-link text-white" href="${pageContext.request.contextPath}/fc/profil">Profil</a>
+        <a class="nav-link text-white" href="${pageContext.request.contextPath}/fc/customerpage">Profil</a>
         <a class="nav-link text-white" href="${pageContext.request.contextPath}/fc/registerpage">Opret profil</a>
         <a class="nav-link text-white " href="${pageContext.request.contextPath}/fc/shoppingcart">Indkøbskurv</a>
     </nav>

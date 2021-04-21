@@ -22,7 +22,7 @@ public abstract class Command
         commands = new HashMap<>();
         commands.put("index", new CommandUnprotectedPage("index"));
         commands.put("cupcakes", new CommandUnprotectedPage("cupcakes"));
-        commands.put("profile", new CommandUnprotectedPage("profile"));
+        commands.put("profil", new CommandUnprotectedPage("profile"));
         commands.put("shoppingcart", new CommandUnprotectedPage("shoppingcart"));
         commands.put("loginpage", new CommandUnprotectedPage("loginpage"));
         commands.put("logincommand", new LoginCommand(""));
@@ -31,7 +31,7 @@ public abstract class Command
         commands.put("registercommand", new RegisterCommand(""));
         commands.put("customerpage", new CommandProtectedPage("customerpage", "customer"));
         commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
-        commands.put("shoppingcart",new CommandUnprotectedPage("shoppingcart"));
+
     }
 
     public static Command fromPath(
