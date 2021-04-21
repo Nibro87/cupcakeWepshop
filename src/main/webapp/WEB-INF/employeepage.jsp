@@ -4,13 +4,36 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Demo Page for Employee Roles
+        shoppingcart
     </jsp:attribute>
+
     <jsp:attribute name="footer">
     </jsp:attribute>
+
     <jsp:body>
         <h1>Hello ${sessionScope.email} </h1>
-        You are now logged in as a EMPLOYEE of our wonderful site.
+        Kunde Liste, hvor der kan indsættes penge på brugerne konto
+        <div class="container">
 
+            <table class="table table-striped">
+                <tr>
+                    <th>Brugere</th>
+                    <th>Saldo</th>
+                    <th>Role</th>
+                    <th>Indsæt</th>
+                    <th>Slet</th>
+                </tr>
+                <c:forEach var="users" items="${applicationScope.userList}">
+                <tr>
+                    <td>${users.email}</td>
+                    <td>${users.saldo}</td>
+                    <td>${users.role}</td>
+
+                        </c:forEach>
+            </table>
+
+
+        </div>
     </jsp:body>
 </t:genericpage>
+

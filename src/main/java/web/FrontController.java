@@ -4,6 +4,7 @@ import business.exceptions.UserException;
 import business.persistence.BottomMapper;
 import business.persistence.Database;
 import business.persistence.ToppingMapper;
+import business.persistence.UserMapper;
 import web.commands.*;
 
 import java.io.IOException;
@@ -41,6 +42,17 @@ public class FrontController extends HttpServlet
         }
 
         // Initialize whatever global datastructures needed here:
+
+        UserMapper userMapper = new UserMapper(database);
+        try {
+            getServletContext().setAttribute("userList", userMapper.getAllUsers());
+        } catch (UserException e) {
+            e.printStackTrace();
+        }
+
+
+
+
         ToppingMapper toppingMapper = new ToppingMapper(database);
         try {
             getServletContext().setAttribute("toppingsList", toppingMapper.getAllToppings());
