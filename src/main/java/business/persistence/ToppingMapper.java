@@ -29,12 +29,13 @@ public class ToppingMapper {
                 ResultSet rs = ps.executeQuery();
 
                 while (rs.next()) {
+                    int toppingId = rs.getInt("topping_id");
 
                     String topping = rs.getString("topping");
                     int price = rs.getInt("price");
 
 
-                    ToppingsList.add(new Topping(topping,price));
+                    ToppingsList.add(new Topping(toppingId,topping,price));
                 }
 
 
