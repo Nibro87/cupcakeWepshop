@@ -16,6 +16,7 @@
         <form method="POST" action="${pageContext.request.contextPath}/fc/shoppingcart">
             <div class="container">
 
+
                 <select class="form-select form-select-lg mb-3"  aria-label="Bund" name="topping" id="topping">
                     <option selected>Vælg topping</option>
                     <c:forEach var="toppings" items="${applicationScope.toppingsList}">
@@ -25,14 +26,21 @@
 
                 </select>
 
+
                 <select class="form-select form-select-lg mb-3"  aria-label="Bund" name="bottom" id="bottom">
+
+
                     <option selected>Vælg bund</option>
                     <c:forEach var="bottom" items="${applicationScope.bottomList}">
                         <option value="topping">${bottom.name} &nbsp;&nbsp; ${bottom.price}Kr. </option>
                     </c:forEach>
 
 
+
+
+
                 </select>
+
 
                 <select class="form-select form-select-lg mb-3" aria-label="antal" name="antal" id="antal">
                     <option selected>Vælg antal</option>
