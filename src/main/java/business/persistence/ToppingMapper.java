@@ -1,5 +1,6 @@
 package business.persistence;
 
+import business.entities.Cupcake;
 import business.entities.Topping;
 import business.exceptions.UserException;
 
@@ -17,6 +18,7 @@ public class ToppingMapper {
     public ToppingMapper(Database database) {
         this.database = database;
     }
+
 
 
     public  List<Topping> getAllToppings() throws UserException {

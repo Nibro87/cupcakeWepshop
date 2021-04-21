@@ -20,7 +20,7 @@
                 <select class="form-select form-select-lg mb-3"  aria-label="Bund" name="topping" id="topping">
                     <option selected>Vælg topping</option>
                     <c:forEach var="toppings" items="${applicationScope.toppingsList}">
-                        <option value="topping">${toppings.name} &nbsp;&nbsp; ${toppings.price}Kr. </option>
+                        <option value="toppingId">${toppings.name} &nbsp;&nbsp; ${toppings.price}Kr. </option>
                     </c:forEach>
 
 
@@ -31,8 +31,8 @@
 
 
                     <option selected>Vælg bund</option>
-                    <c:forEach var="bottom" items="${applicationScope.bottomList}">
-                        <option value="topping">${bottom.name} &nbsp;&nbsp; ${bottom.price}Kr. </option>
+                    <c:forEach var="bottoms" items="${applicationScope.bottomList}">
+                        <option value="bottomId">${bottom.name} &nbsp;&nbsp; ${bottom.price}Kr. </option>
                     </c:forEach>
 
 
@@ -42,7 +42,7 @@
                 </select>
 
 
-                <select class="form-select form-select-lg mb-3" aria-label="antal" name="antal" id="antal">
+                <select class="form-select form-select-lg mb-3" aria-label="antal" name="amount" id="amount">
                     <option selected>Vælg antal</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -51,7 +51,9 @@
                     <option value="5">5</option>
                 </select>
 
-                <button class="btn btn-primary" type="submit">Gå til kurv</button>
+                <button class="btn btn-primary" type="submit">Godkent</button>
+
+
             </div>
 
 

@@ -26,6 +26,8 @@
 
             </table>
 
+            <a class="btn btn-primary" role="button" href="${pageContext.request.contextPath}" >Shop more</a>
+
             <a class="btn btn-primary" role="button" href="pay" >Betal</a>
         </div>
     </jsp:body>
