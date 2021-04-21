@@ -13,10 +13,10 @@
     </jsp:attribute>
 
     <jsp:body>
-        <form method="POST" action="">
+        <form method="POST" action="${pageContext.request.contextPath}/fc/shoppingcart">
             <div class="container">
 
-                <select class="form-select form-select-lg mb-3"  aria-label="Bund" id="topping">
+                <select class="form-select form-select-lg mb-3"  aria-label="Bund" name="topping" id="topping">
                     <option selected>Vælg topping</option>
                     <c:forEach var="toppings" items="${applicationScope.toppingsList}">
                         <option value="topping">${toppings.name} &nbsp;&nbsp; ${toppings.price}Kr. </option>
@@ -25,7 +25,7 @@
 
                 </select>
 
-                <select class="form-select form-select-lg mb-3"  aria-label="Bund" id="topping">
+                <select class="form-select form-select-lg mb-3"  aria-label="Bund" name="bottom" id="bottom">
                     <option selected>Vælg bund</option>
                     <c:forEach var="bottom" items="${applicationScope.bottomList}">
                         <option value="topping">${bottom.name} &nbsp;&nbsp; ${bottom.price}Kr. </option>
@@ -34,7 +34,7 @@
 
                 </select>
 
-                <select class="form-select form-select-lg mb-3" aria-label="antal">
+                <select class="form-select form-select-lg mb-3" aria-label="antal" name="antal" id="antal">
                     <option selected>Vælg antal</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -43,7 +43,7 @@
                     <option value="5">5</option>
                 </select>
 
-                <button class="btn btn-primary" type="submit">Læg i kurv</button>
+                <button class="btn btn-primary" type="submit">Gå til kurv</button>
             </div>
 
 
