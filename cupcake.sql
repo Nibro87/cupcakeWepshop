@@ -1,43 +1,22 @@
-USE cupcake;
+CREATE DATABASE  IF NOT EXISTS `cupcake`;
 
-CREATE TABLE users(
+USE `cupcake`;
 
-user_id varchar(50) NOT NULL,
-pass varchar(50) NOT NULL,
-balance int NOT NULL,
-administrator boolean,
-PRIMARY KEY(user_Id)
-
-);
-
-INSERT INTO users (user_id, pass, balance, administrator)
-VALUES ("ole@ole.dk", "ole", "1000", TRUE);
-
-
-
-CREATE TABLE orders(
-order_id int NOT NULL AUTO_INCREMENT,
-user_id varchar(50) NOT NULL,
-price int NOT NULL,
-ordertime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,   
-completed boolean,
-PRIMARY KEY(order_id),
-FOREIGN KEY(user_id) REFERENCES users(user_id)
-);
-
-INSERT INTO orders (order_id, user_id, price, completed)
-VALUES ("0", "ole@ole.dk", "0", TRUE);
-
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(90) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `role` varchar(20) NOT NULL DEFAULT 'customer',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 CREATE TABLE topping(
 topping varchar(50),
 price int NOT NULL,
 primary key(topping)
 );
-
-INSERT INTO topping(topping, price)
-VALUES("Chocolate","5"),("Vanilla","5"),("Nutmeg","5"),("Pistacio","6"),("Almond","7");
-
 
 CREATE TABLE bottom(
 bottom varchar(50),
@@ -48,10 +27,10 @@ primary key(bottom)
 INSERT INTO bottom(bottom, price)
 VALUES("Chocolate","5"),("Blueberry","5"),("Rasberry","5"),("Crispy","6"),("Strawberry","6"),("Rum/Raisin","7"),("Orange","8"),("Lemon","8"),("Blue Cheese","9");
 
+INSERT INTO topping(topping, price)
+VALUES("Chocolate","5"),("Vanilla","5"),("Nutmeg","5"),("Pistacio","6"),("Almond","7");
 
-
-
-CREATE TABLE cupcake(
+CREATE TABLE cupcakeorder(
 cupcake_id int NOT NULL AUTO_INCREMENT,
 order_id int NOT NULL,
 amount int NOT NULL, 
@@ -64,3 +43,9 @@ FOREIGN KEY(topping) REFERENCES topping(topping),
 FOREIGN KEY(bottom) REFERENCES bottom(bottom)
 );
 
+LOCK TABLES `users` WRITE;
+INSERT INTO `users` VALUES 
+(1,'barbie@world.dk','jensen','customer'),
+(2,'ken@world.com','jensen','customer'),
+(3,'robin@gotham.com','batman','employee');
+UNLOCK TABLES;
