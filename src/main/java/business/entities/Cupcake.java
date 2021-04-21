@@ -5,16 +5,14 @@ public class Cupcake {
 private String bottom;
 private String topping;
 private int price;
+private int amount;
 
 
-public Cupcake(){
-
-}
-
-    public Cupcake(String bottom, String topping, int price) {
+    public Cupcake(String bottom, String topping, int price, int amount) {
         this.bottom = bottom;
         this.topping = topping;
         this.price = price;
+        this.amount = amount;
     }
 
     public String getBottom() {
@@ -40,4 +38,13 @@ public Cupcake(){
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void seAmount(int amount) {
+        this.amount = amount;
+    }
 }
+
