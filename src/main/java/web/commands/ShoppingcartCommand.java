@@ -19,7 +19,7 @@ public class ShoppingcartCommand extends CommandUnprotectedPage {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {
-        
+
         int toppingPrice=Integer.parseInt(request.getParameter("toppingPrice"));
         int bottomPrice=Integer.parseInt(request.getParameter("bottomPrice"));
         int amount=Integer.parseInt(request.getParameter("amount"));

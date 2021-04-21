@@ -31,12 +31,13 @@ public class BottomMapper {
                 ResultSet rs = ps.executeQuery();
 
                 while (rs.next()) {
-
+                    int bottom_id = rs.getInt("bottom_id");
                     String name = rs.getString("bottom");
                     int price = rs.getInt("price");
 
 
-                    BottomList.add(new Bottom(name,price));
+
+                    BottomList.add(new Bottom(bottom_id,name,price));
                 }
 
 
