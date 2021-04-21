@@ -1,9 +1,12 @@
 package business.persistence;
 
+import business.entities.Bottom;
 import business.exceptions.UserException;
 import business.entities.User;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserMapper
 {
@@ -53,6 +56,7 @@ public class UserMapper
             {
                 ps.setString(1, email);
                 ps.setString(2, password);
+
                 ResultSet rs = ps.executeQuery();
                 if (rs.next())
                 {
@@ -77,4 +81,36 @@ public class UserMapper
         }
     }
 
+    public List<User> getAllUsers() throws UserException {
+
+        List<User> UserList = new ArrayList<>();
+
+        try (Connection connection = database.connect()) {
+            String sql = "SELECT * FROM users";
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    int id = rs.getInt("id");
+                    String email = rs.getString("email");
+                    String password= rs.getString("password");
+                    String role = rs.getString("role");
+                    int saldo = rs.getInt("saldo");
+
+
+
+
+                    UserList.add(new User(email,password,role,saldo));
+                }
+
+
+            }
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return UserList;
+    }
 }

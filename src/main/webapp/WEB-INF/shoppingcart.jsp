@@ -11,6 +11,7 @@
     </jsp:attribute>
 
     <jsp:body>
+
         <div class="container">
 
             <table class="table table-striped">
@@ -19,8 +20,8 @@
                     <th>Topping</th>
                     <th>Antal</th>
                     <th>Pris</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Rediger</th>
+                    <th>Slet</th>
                 </tr>
 
             </table>
