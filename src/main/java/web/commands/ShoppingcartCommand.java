@@ -1,7 +1,5 @@
 package web.commands;
 
-import web.commands.CommandUnprotectedPage;
-
 public class ShoppingcartCommand extends CommandUnprotectedPage {
 
 

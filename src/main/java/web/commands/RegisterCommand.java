@@ -39,7 +39,7 @@ public class RegisterCommand extends CommandUnprotectedPage
         else
         {
             request.setAttribute("error", "the two passwords did not match");
-            return "index";
+            return "registerpage";
         }
     }
 

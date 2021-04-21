@@ -22,7 +22,6 @@ public abstract class Command
         commands = new HashMap<>();
         commands.put("index", new CommandUnprotectedPage("index"));
         commands.put("cupcakes", new CommandUnprotectedPage("cupcakes"));
-        commands.put("createprofil", new CommandUnprotectedPage("createprofil"));
         commands.put("profile", new CommandUnprotectedPage("profile"));
         commands.put("shoppingcart", new CommandUnprotectedPage("shoppingcart"));
         commands.put("loginpage", new CommandUnprotectedPage("loginpage"));

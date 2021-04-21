@@ -4,11 +4,10 @@ public class Cupcake {
 
 private String bottom;
 private String topping;
-int amount;
 private int price;
 
 
-public Cupcake() {
+public Cupcake(){
 
 }
 
