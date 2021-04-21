@@ -33,17 +33,17 @@
 
 
         <a class="nav-link text-white " href="${pageContext.request.contextPath}/fc/cupcakes">Cupcakes</a>
-        <a class="nav-link text-white" href="${pageContext.request.contextPath}/fc/profil">Profil</a>
+        <a class="nav-link text-white" href="${pageContext.request.contextPath}/fc/customerpage">Profil</a>
         <a class="nav-link text-white" href="${pageContext.request.contextPath}/fc/registerpage">Opret profil</a>
         <a class="nav-link text-white " href="${pageContext.request.contextPath}/fc/shoppingcart">Indkøbskurv</a>
     </nav>
 
     <div>
-
+        <div class="login-container">
         <c:if test="${sessionScope.user != null }">
-            ${sessionScope.user.email}
+            <strong>Email:${sessionScope.user.email} saldo: ${sessionScope.user.saldo} </strong>
         </c:if>
-
+        </div>
         <c:set var="thisPage" value="${pageContext.request.servletPath}"/>
         <c:set var="isNotLoginPage" value="${!fn:endsWith(thisPage,'loginpage.jsp')}"/>
         <c:set var="isNotRegisterPage" value="${!fn:endsWith(thisPage,'registerpage.jsp')}"/>
