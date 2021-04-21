@@ -27,4 +27,8 @@ public class UserFacade
         return user;
     }
 
+    public int deleteUser(int id) throws UserException {
+
+        return userMapper.deleteUser(id);
+    }
 }

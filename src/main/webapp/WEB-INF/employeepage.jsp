@@ -13,6 +13,8 @@
     <jsp:body>
         <h1>Hello ${sessionScope.email} </h1>
         Kunde Liste, hvor der kan indsættes penge på brugerne konto
+
+        <form action="${pageContext.request.contextPath}/fc/manegeuser" method="post">
         <div class="container">
 
             <table class="table table-striped">
@@ -28,12 +30,22 @@
                     <td>${users.email}</td>
                     <td>${users.saldo}</td>
                     <td>${users.role}</td>
-
+                    <td>
+                        <a href="InsertUser?code=${users.id}">Indsæt</a>
+                    </td>
+                    <td>
+                        <button type="submit" name="delete" value="${users.id}">Slet</button>
+                    </td>
                         </c:forEach>
             </table>
-
+            <c:if test="${requestScope.error != null }">
+                <p style="color:red">
+                        ${requestScope.error}
+                </p>
+            </c:if>
 
         </div>
+        </form>
     </jsp:body>
 </t:genericpage>
 
