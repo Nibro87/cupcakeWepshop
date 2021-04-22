@@ -140,8 +140,10 @@ public class UserMapper
             String sql = "UPDATE users SET saldo = ? WHERE id = ?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
                 ps.setInt(1,saldo);
                 ps.setInt(2,id);
+                ps.executeUpdate();
             } catch (SQLException ex) {
                 throw new UserException(ex.getMessage());
             }
@@ -150,7 +152,7 @@ public class UserMapper
         }
 
 
-        return id;
+        return saldo;
     }
 
 

@@ -32,11 +32,15 @@
                     <td>${users.email}</td>
                     <td>${users.saldo}</td>
                     <td>${users.role}</td>
+
+                    <form name="login" action="${pageContext.request.contextPath}/fc/manageUserCommand" method="POST">
                     <td>
-                        <input type="text" name="insert" value="${users.id}">Indbetal til saldo</input>
-                        placeholder="Indtast beløb">
-                        <button type="submit">Submit</button>
+
+                     <input id="saldo" class="form-control" type="text" name="insert" value="${users.saldo}" placeholder="Insert to saldo">
+
+                        <input class="btn btn-primary" type="submit" type="submit" value="Submit">
                     </td>
+                    </form>
                     <td>
                         <button type="submit" name="delete" value="${users.id}">Slet</button>
                     </td>

@@ -32,7 +32,7 @@
 
                     <option selected>Vælg bund</option>
                     <c:forEach var="bottoms" items="${applicationScope.bottomList}">
-                        <option value="bottomId">${bottom.name} &nbsp;&nbsp; ${bottom.price}Kr. </option>
+                        <option value="bottomId">${bottoms.name} &nbsp;&nbsp; ${bottoms.price}Kr. </option>
                     </c:forEach>
 
 
