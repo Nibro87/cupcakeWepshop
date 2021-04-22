@@ -47,4 +47,34 @@ public class ManageUserCommand extends CommandProtectedPage {
 
         return pageToShow;
     }
+
+    public int insert(HttpServletRequest request, HttpServletResponse response) throws UserException {
+
+        String insertMoney = request.getParameter("insert");
+
+        if (insertMoney != null){
+
+            int rowsAffected = userFacade.deleteUser(Integer.parseInt(insertMoney));
+
+            if(rowsAffected >0){
+                request.getServletContext().setAttribute("userList",userFacade.getAllUsers());
+            }
+        }else {
+
+            request.setAttribute("error","Brugeren kunne ikke fjernes");
+        }
+
+
+
+
+
+
+
+
+        return Integer.parseInt(pageToShow);
+    }
+
+
+
+
 }

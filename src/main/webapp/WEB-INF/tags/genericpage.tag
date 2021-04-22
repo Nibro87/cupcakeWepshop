@@ -34,7 +34,6 @@
 
         <a class="nav-link text-white " href="${pageContext.request.contextPath}/fc/cupcakes">Cupcakes</a>
         <a class="nav-link text-white" href="${pageContext.request.contextPath}/fc/customerpage">Profil</a>
-        <a class="nav-link text-white" href="${pageContext.request.contextPath}/fc/registerpage">Opret profil</a>
         <a class="nav-link text-white " href="${pageContext.request.contextPath}/fc/shoppingcart">Indkøbskurv</a>
     </nav>
 
@@ -57,7 +56,7 @@
                 <a type="button" class="btn btn-sm  btn-outline-secondary"
                    href="${pageContext.request.contextPath}/fc/loginpage">Login</a>
                 <a type="button" class="btn btn-sm  btn-outline-secondary"
-                   href="${pageContext.request.contextPath}/fc/registerpage">Sign up</a>
+                   href="${pageContext.request.contextPath}/fc/registerpage">Opret profil</a>
             </c:if>
     </div>
     </c:if>

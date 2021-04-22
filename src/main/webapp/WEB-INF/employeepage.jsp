@@ -33,7 +33,7 @@
                     <td>${users.saldo}</td>
                     <td>${users.role}</td>
                     <td>
-                        <a href="InsertUser?code=${users.id}">Indsæt</a>
+                        <button type="submit" name="insert" value="${users.id}">Indbetal til saldo</button>
                     </td>
                     <td>
                         <button type="submit" name="delete" value="${users.id}">Slet</button>

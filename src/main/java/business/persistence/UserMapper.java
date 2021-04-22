@@ -134,7 +134,24 @@ public class UserMapper
 
     }
 
+    public int updateBalance(int id,int saldo) throws UserException {
 
+        try (Connection connection = database.connect()) {
+            String sql = "UPDATE users SET saldo = ? WHERE id = ?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+                ps.setInt(1,saldo);
+                ps.setInt(2,id);
+            } catch (SQLException ex) {
+                throw new UserException(ex.getMessage());
+            }
+        } catch (SQLException ex) {
+            throw new UserException(ex.getMessage());
+        }
+
+
+        return id;
+    }
 
 
 
