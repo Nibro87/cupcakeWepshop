@@ -100,7 +100,7 @@ public class UserMapper
 
 
 
-                    UserList.add(new User(email,password,role,saldo));
+                    UserList.add(new User(id,email,password,role,saldo));
                 }
 
 
