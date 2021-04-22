@@ -33,7 +33,9 @@
                     <td>${users.saldo}</td>
                     <td>${users.role}</td>
                     <td>
-                        <button type="submit" name="insert" value="${users.id}">Indbetal til saldo</button>
+                        <input type="text" name="insert" value="${users.id}">Indbetal til saldo</input>
+                        placeholder="Indtast beløb">
+                        <button type="submit">Submit</button>
                     </td>
                     <td>
                         <button type="submit" name="delete" value="${users.id}">Slet</button>
