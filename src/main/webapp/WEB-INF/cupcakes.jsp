@@ -51,7 +51,7 @@
                     <option value="5">5</option>
                 </select>
 
-                <button class="btn btn-primary" type="submit">Godkent</button>
+                <button class="btn btn-primary" type="submit">Godkend</button>
 
 
             </div>
