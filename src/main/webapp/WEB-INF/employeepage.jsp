@@ -4,7 +4,7 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-        shoppingcart
+        employee
     </jsp:attribute>
 
     <jsp:attribute name="footer">
@@ -14,11 +14,12 @@
         <h1>Hello ${sessionScope.email} </h1>
         Kunde Liste, hvor der kan indsættes penge på brugerne konto
 
-        <form action="${pageContext.request.contextPath}/fc/manegeuser" method="post">
-        <div class="container">
+        <form action="${pageContext.request.contextPath}/fc/manageUserCommand" method="post">
+
 
             <table class="table table-striped">
                 <tr>
+                    <th>Bruger id</th>
                     <th>Brugere</th>
                     <th>Saldo</th>
                     <th>Role</th>
@@ -27,6 +28,7 @@
                 </tr>
                 <c:forEach var="users" items="${applicationScope.userList}">
                 <tr>
+                    <td>${users.id}</td>
                     <td>${users.email}</td>
                     <td>${users.saldo}</td>
                     <td>${users.role}</td>
@@ -44,7 +46,7 @@
                 </p>
             </c:if>
 
-        </div>
+
         </form>
     </jsp:body>
 </t:genericpage>

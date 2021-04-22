@@ -22,7 +22,7 @@ public class ManageUserCommand extends CommandProtectedPage {
 
 
     @Override
-    public java.lang.String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
 
         String deleteId = request.getParameter("delete");
 
@@ -31,7 +31,7 @@ public class ManageUserCommand extends CommandProtectedPage {
             int rowsAffected = userFacade.deleteUser(Integer.parseInt(deleteId));
 
             if(rowsAffected >0){
-              request.getServletContext().setAttribute("userList",userMapper.getAllUsers());
+              request.getServletContext().setAttribute("userList",userFacade.getAllUsers());
             }
         }else {
 

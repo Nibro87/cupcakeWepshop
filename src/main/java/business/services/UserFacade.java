@@ -5,9 +5,12 @@ import business.persistence.Database;
 import business.persistence.UserMapper;
 import business.exceptions.UserException;
 
+import java.util.List;
+
 public class UserFacade
 {
     UserMapper userMapper;
+
 
     public UserFacade(Database database)
     {
@@ -30,5 +33,10 @@ public class UserFacade
     public int deleteUser(int id) throws UserException {
 
         return userMapper.deleteUser(id);
+    }
+
+    public List<User> getAllUsers() {
+
+        return null;
     }
 }

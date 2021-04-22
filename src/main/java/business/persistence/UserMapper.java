@@ -114,27 +114,22 @@ public class UserMapper
         return UserList;
     }
 
-    public int deleteUser(int id) throws UserException
-    {
-        try (Connection connection = database.connect())
-        {
+    public int deleteUser(int id) throws UserException {
+
+        try (Connection connection = database.connect()) {
             String sql = "DELETE FROM users WHERE id =?";
 
-            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
-            {
-             ps.setInt(1,id);
-            int rowsAffected = ps.executeUpdate();
-            return rowsAffected;
-            }
-            catch (SQLException ex)
-            {
+            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+                ps.setInt(1, id);
+                int rowsAffected = ps.executeUpdate();
+              return rowsAffected;
+            } catch (SQLException ex) {
                 throw new UserException(ex.getMessage());
             }
-        }
-        catch (SQLException ex)
-        {
+        } catch (SQLException ex) {
             throw new UserException(ex.getMessage());
         }
+
 
 
     }
