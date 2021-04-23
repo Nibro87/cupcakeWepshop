@@ -2,41 +2,31 @@ package business.entities;
 
 public class Cupcake {
 
-private String bottom;
-private String topping;
-private int price;
+private Bottom bottom;
+private Topping topping;
 private int amount;
 
 
-    public Cupcake(String bottom, String topping, int price, int amount) {
+    public Cupcake(Topping topping, Bottom bottom,int amount) {
         this.bottom = bottom;
         this.topping = topping;
-        this.price = price;
         this.amount = amount;
     }
 
-    public String getBottom() {
+    public Bottom getBottom() {
         return bottom;
     }
 
-    public void setBottom(String bottom) {
+    public void setBottom(Bottom bottom) {
         this.bottom = bottom;
     }
 
-    public String getTopping() {
+    public Topping getTopping() {
         return topping;
     }
 
-    public void setTopping(String topping) {
+    public void setTopping(Topping topping) {
         this.topping = topping;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     public int getAmount() {
