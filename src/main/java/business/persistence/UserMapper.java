@@ -11,6 +11,7 @@ import java.util.List;
 public class UserMapper
 {
     private Database database;
+    private User user;
 
     public UserMapper(Database database)
     {
@@ -134,7 +135,9 @@ public class UserMapper
 
     }
 
-    public int updateBalance(int id,int saldo) throws UserException {
+    public int updateBalance(int saldo,int id) throws UserException {
+
+
 
         try (Connection connection = database.connect()) {
             String sql = "UPDATE users SET saldo = ? WHERE id = ?";
@@ -143,7 +146,10 @@ public class UserMapper
 
                 ps.setInt(1,saldo);
                 ps.setInt(2,id);
-                ps.executeUpdate();
+                int rowsInserted = ps.executeUpdate();
+                return rowsInserted;
+
+
             } catch (SQLException ex) {
                 throw new UserException(ex.getMessage());
             }
@@ -152,7 +158,7 @@ public class UserMapper
         }
 
 
-        return saldo;
+
     }
 
 

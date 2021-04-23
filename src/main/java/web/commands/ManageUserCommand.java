@@ -25,6 +25,7 @@ public class ManageUserCommand extends CommandProtectedPage {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
 
         String deleteId = request.getParameter("delete");
+        String insertMoney = request.getParameter("insert");
 
         if (deleteId != null){
 
