@@ -17,30 +17,49 @@
             <br/>
 
             <table class="table table-striped">
-                <thead><th>Bund</th><th>Topping</th><th>Antal</th><th>pris</th><th></th></thead>
-                <c:forEach var="cupcakeEntry" items="${sessionScope.shoppingcart.cupcakes}">
+                <thead>
+                <tr>
+                    <td>Bund</td>
+                    <td>Topping</td>
+                    <td>Antal</td>
+                    <td>pris</td>
+
+                </tr>
+                </thead>
+
+                <c:forEach var="cupcakeEntry" items="${sessionScope.shoppingcart.getCupcakes()}">
                     <tr>
-                        <td>${cupcakeEntry.bottom.name}</td>
-                        <td>${cupcakeEntry.topping.name}</td>
+                        <td>${cupcakeEntry.getBottom().getName()}</td>
+                        <td>${cupcakeEntry.getTopping().getName()}</td>
                         <td>${cupcakeEntry.amount}</td>
                         <td>${cupcakeEntry.price}</td>
-                        <td><button class="btn btn-danger btn-sm" type="submit" name="delete" value="${cupcakeEntry.topping}">delete</button> </td>
+
                     </tr>
 
                 </c:forEach>
 
             </table>
 
-            <b>pris i ale:  ${sessionScope.shoppingcart.totalPrice()} Kr</b>
+            <b>Total pris:  ${sessionScope.shoppingcart.totalPrice()} Kr</b>
         <br/>
         <br/>
 
 
        <div>
 
-            <a class="btn btn-primary" role="button" href="${pageContext.request.contextPath}" >Shop more</a>
+            <a class="btn btn-primary" role="button" href="${pageContext.request.contextPath}/fc/cupcakes" >Shop more</a>
 
-            <a class="btn btn-primary" role="button" href="pay" >Betal</a>
+
+           <c:if test="${sessionScope.user == null }">
+               <a type="button" class="btn btn-sm  btn-outline-secondary"
+                  href="${pageContext.request.contextPath}/fc/loginpage">betale</a>
+           </c:if>
+
+           <c:if test="${sessionScope.user != null }">
+               <a type="button" class="btn btn-sm  btn-outline-secondary"
+                  href="${pageContext.request.contextPath}/fc/pay">betale</a>
+           </c:if>
+
        </div>
 
     </jsp:body>

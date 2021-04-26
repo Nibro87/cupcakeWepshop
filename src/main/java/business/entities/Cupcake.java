@@ -13,6 +13,11 @@ private int amount;
         this.amount = amount;
     }
 
+    public int getPrice()
+    {
+        return (topping.getPrice()+bottom.getPrice())*amount;
+    }
+
     public Bottom getBottom() {
         return bottom;
     }
