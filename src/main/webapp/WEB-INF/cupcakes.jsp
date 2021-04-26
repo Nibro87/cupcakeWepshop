@@ -51,7 +51,11 @@
                     <option value="5">5</option>
                 </select>
 
+<<<<<<< HEAD
                 <button class="btn btn-primary" type="submit">Læg i kurv</button>
+=======
+                <button class="btn btn-primary" type="submit">læg i kurv</button>
+>>>>>>> a357f7ff71f3393199b87a76eb987466c54707d1
 
 
             </div>

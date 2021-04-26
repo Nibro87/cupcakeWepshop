@@ -17,12 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingcartCommand extends CommandUnprotectedPage {
-    private Database database;
-    ToppingMapper toppingMapper=new ToppingMapper(database);
-    BottomMapper bottomMapper = new BottomMapper(database);
-    public List<Cupcake> cupcakes = new ArrayList();
-
-
 
     public ShoppingcartCommand(String pageToShow) {
         super(pageToShow);
@@ -40,7 +34,7 @@ public class ShoppingcartCommand extends CommandUnprotectedPage {
             amount = Integer.parseInt(request.getParameter("amount"));
 
         }catch(NumberFormatException ex){
-            throw new UserException("Please choose amount");
+            throw new UserException("fejl i valgning cupcake");
         }
 
         List<Topping> toppingList=(List<Topping>)request.getServletContext().getAttribute("toppingsList");
@@ -56,6 +50,7 @@ public class ShoppingcartCommand extends CommandUnprotectedPage {
         Topping topping = getToppingFromId(toppingList,toppingId);
 
         Bottom bottom = getBottomFromId(bottomList,bottomId);
+
         Cupcake cupcake=new Cupcake(topping,bottom,amount);
 
         shoppingcart.addToCart(cupcake);
