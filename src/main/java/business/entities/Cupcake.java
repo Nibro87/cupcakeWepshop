@@ -13,6 +13,9 @@ private int amount;
         this.amount = amount;
     }
 
+    public double getPrice(){
+        return (topping.getPrice() + bottom.getPrice()) * amount;
+    }
     public Bottom getBottom() {
         return bottom;
     }

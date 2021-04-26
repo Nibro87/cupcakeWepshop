@@ -18,20 +18,20 @@
 
             <table class="table table-striped">
                 <thead><th>Bund</th><th>Topping</th><th>Antal</th><th>pris</th><th></th></thead>
-                <c:forEach var="cupcakeEntry" items="${sessionScope.shoppingcart.cupcakes}">
+                <c:forEach var="cupcake" items="${sessionScope.Shoppingcart.cupcakes}">
                     <tr>
-                        <td>${cupcakeEntry.bottom.name}</td>
-                        <td>${cupcakeEntry.topping.name}</td>
-                        <td>${cupcakeEntry.amount}</td>
-                        <td>${cupcakeEntry.price}</td>
-                        <td><button class="btn btn-danger btn-sm" type="submit" name="delete" value="${cupcakeEntry.topping}">delete</button> </td>
+                        <td>${cupcake.bottom.name}</td>
+                        <td>${cupcake.topping.name}</td>
+                        <td>${cupcake.amount}</td>
+                        <td>${cupcake.price}</td>
+                        <td><button class="btn btn-danger btn-sm" type="submit" name="delete" value="${cupcake.topping}">delete</button> </td>
                     </tr>
 
                 </c:forEach>
 
             </table>
 
-            <b>pris i ale:  ${sessionScope.shoppingcart.totalPrice()} Kr</b>
+            <b>pris i alt:  ${sessionScope.Shoppingcart.totalSum()} Kr</b>
         <br/>
         <br/>
 
