@@ -140,7 +140,7 @@ public class UserMapper
 
 
         try (Connection connection = database.connect()) {
-            String sql = "UPDATE users SET saldo = ? WHERE id = ?";
+            String sql = "UPDATE users SET saldo = saldo+'?' WHERE id = ?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 

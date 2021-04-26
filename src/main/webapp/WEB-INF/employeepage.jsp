@@ -38,7 +38,7 @@
 
                      <input id="saldo" class="form-control" type="text" name="insert" value="${users.saldo}" placeholder="Insert to saldo">
 
-                        <input class="btn btn-primary" type="submit" type="submit" value="Submit">
+                        <input class="btn btn-primary"  type="submit" value="Submit">
                     </td>
                     </form>
                     <td>
