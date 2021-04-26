@@ -19,8 +19,8 @@
 
                 <select class="form-select form-select-lg mb-3"  aria-label="Bund" name="topping" id="topping">
                     <option selected>Vælg topping</option>
-                    <c:forEach var="toppings" items="${applicationScope.toppingsList}">
-                        <option value="toppingId">${toppings.name} &nbsp;&nbsp; ${toppings.price}Kr. </option>
+                    <c:forEach var="topping" items="${applicationScope.toppingsList}">
+                        <option value="toppingId">${topping.name} &nbsp;&nbsp; ${topping.price}Kr. </option>
                     </c:forEach>
 
 
@@ -31,8 +31,8 @@
 
 
                     <option selected>Vælg bund</option>
-                    <c:forEach var="bottoms" items="${applicationScope.bottomList}">
-                        <option value="bottomId">${bottoms.name} &nbsp;&nbsp; ${bottoms.price}Kr. </option>
+                    <c:forEach var="bottom" items="${applicationScope.bottomList}">
+                        <option value="bottomId">${bottom.name} &nbsp;&nbsp; ${bottom.price}Kr. </option>
                     </c:forEach>
 
 
@@ -51,7 +51,11 @@
                     <option value="5">5</option>
                 </select>
 
+<<<<<<< HEAD
+                <button class="btn btn-primary" type="submit">Læg i kurv</button>
+=======
                 <button class="btn btn-primary" type="submit">læg i kurv</button>
+>>>>>>> a357f7ff71f3393199b87a76eb987466c54707d1
 
 
             </div>

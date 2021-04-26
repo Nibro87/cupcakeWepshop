@@ -41,4 +41,18 @@ public class Shoppingcart {
 
     }
 
+    public double totalSum(){
+
+        double sum = 0.0;
+        for (Cupcake cupcake: cupcakes ){
+
+            sum+= cupcake.getPrice();
+
+        }
+
+        return sum;
+    }
+
+
+
 }

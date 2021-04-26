@@ -13,11 +13,17 @@ private int amount;
         this.amount = amount;
     }
 
+<<<<<<< HEAD
+    public double getPrice(){
+        return (topping.getPrice() + bottom.getPrice()) * amount;
+    }
+=======
     public int getPrice()
     {
         return (topping.getPrice()+bottom.getPrice())*amount;
     }
 
+>>>>>>> a357f7ff71f3393199b87a76eb987466c54707d1
     public Bottom getBottom() {
         return bottom;
     }
