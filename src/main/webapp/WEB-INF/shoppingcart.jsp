@@ -17,16 +17,16 @@
             <br/>
 
             <table class="table table-striped">
-<<<<<<< HEAD
+
                 <thead><th>Bund</th><th>Topping</th><th>Antal</th><th>pris</th><th></th></thead>
-                <c:forEach var="cupcake" items="${sessionScope.Shoppingcart.cupcakes}">
+                <c:forEach var="cupcakeEntry" items="${sessionScope.Shoppingcart.cupcakes}">
                     <tr>
-                        <td>${cupcake.bottom.name}</td>
-                        <td>${cupcake.topping.name}</td>
-                        <td>${cupcake.amount}</td>
-                        <td>${cupcake.price}</td>
+                        <td>${cupcakeEntry.bottom.name}</td>
+                        <td>${cupcakeEntry.topping.name}</td>
+                        <td>${cupcakeEntry.amount}</td>
+                        <td>${cupcakeEntry.price}</td>
                         <td><button class="btn btn-danger btn-sm" type="submit" name="delete" value="${cupcake.topping}">delete</button> </td>
-=======
+                        </c:forEach>
                 <thead>
                 <tr>
                     <td>Bund</td>
@@ -37,25 +37,23 @@
                 </tr>
                 </thead>
 
-                <c:forEach var="cupcakeEntry" items="${sessionScope.shoppingcart.getCupcakes()}">
+                <c:forEach var="cupcakeEntry" items="${sessionScope.Shoppingcart.cupcakes}">
                     <tr>
-                        <td>${cupcakeEntry.getBottom().getName()}</td>
-                        <td>${cupcakeEntry.getTopping().getName()}</td>
+                        <td>${cupcakeEntry.bottom.name}</td>
+                        <td>${cupcakeEntry.topping.name}</td>
                         <td>${cupcakeEntry.amount}</td>
                         <td>${cupcakeEntry.price}</td>
 
->>>>>>> a357f7ff71f3393199b87a76eb987466c54707d1
+
                     </tr>
 
                 </c:forEach>
 
             </table>
 
-<<<<<<< HEAD
-            <b>pris i alt:  ${sessionScope.Shoppingcart.totalSum()} Kr</b>
-=======
-            <b>Total pris:  ${sessionScope.shoppingcart.totalPrice()} Kr</b>
->>>>>>> a357f7ff71f3393199b87a76eb987466c54707d1
+
+            <b>Total pris:  ${sessionScope.Shoppingcart.totalPrice()} Kr</b>
+
         <br/>
         <br/>
 
