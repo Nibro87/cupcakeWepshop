@@ -31,6 +31,7 @@ public abstract class Command
         commands.put("registercommand", new RegisterCommand("registerpage"));
         commands.put("customerpage", new CommandProtectedPage("customerpage", "customer"));
         commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
+        commands.put("Pay",new CommandProtectedPage("pay","customer"));
 
     }
 

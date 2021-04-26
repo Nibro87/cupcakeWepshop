@@ -18,7 +18,7 @@ public class PayCommand extends CommandProtectedPage {
         int newBalance = 0;
 
         HttpSession session= request.getSession();
-        
+
 
         return pageToShow;
     }
