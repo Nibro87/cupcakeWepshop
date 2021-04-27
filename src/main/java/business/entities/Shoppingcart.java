@@ -6,6 +6,7 @@ import java.util.List;
 public class Shoppingcart {
 
     private List<Cupcake> cupcakes = new ArrayList<>();
+    private int orderId;
 
     public Shoppingcart() {
 
@@ -15,8 +16,13 @@ public class Shoppingcart {
         return cupcakes;
     }
 
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
 
-
+    public int getOrderId() {
+        return orderId;
+    }
 
     public int getCupcakeNumber(){
         return cupcakes.size();
@@ -41,17 +47,7 @@ public class Shoppingcart {
 
     }
 
-    public double totalSum(){
 
-        double sum = 0.0;
-        for (Cupcake cupcake: cupcakes ){
-
-            sum+= cupcake.getPrice();
-
-        }
-
-        return sum;
-    }
 
 
 

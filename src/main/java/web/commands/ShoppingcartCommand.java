@@ -41,7 +41,9 @@ public class ShoppingcartCommand extends CommandUnprotectedPage {
         List<Bottom> bottomList=(List<Bottom>)request.getServletContext().getAttribute("bottomList");
 
         HttpSession session= request.getSession();
+
         Shoppingcart shoppingcart = (Shoppingcart) session.getAttribute("shoppingcart");
+        //session.setAttribute("shoppingcart", shoppingcart);
 
         if(shoppingcart==null){
             shoppingcart=new Shoppingcart();
@@ -54,8 +56,8 @@ public class ShoppingcartCommand extends CommandUnprotectedPage {
         Cupcake cupcake=new Cupcake(topping,bottom,amount);
 
         shoppingcart.addToCart(cupcake);
-
-        session.setAttribute("Shoppingcart",shoppingcart);
+        System.out.println(shoppingcart.getCupcakes());
+        session.setAttribute("shoppingcart",shoppingcart);
 
 
         return pageToShow;
