@@ -33,12 +33,12 @@
                     <td>${users.saldo}</td>
                     <td>${users.role}</td>
 
-                    <form name="login" action="${pageContext.request.contextPath}/fc/manageUserCommand" method="POST">
+                    <form action="${pageContext.request.contextPath}/fc/manageUserCommand" method="POST">
                     <td>
 
-                     <input id="saldo" class="form-control" type="text" name="insert" value="${users.saldo}" placeholder="Insert to saldo">
+                        <label for="insert"></label><input id="insert" class="form-control" type="text" name="insert"  placeholder="Insert">
 
-                        <input class="btn btn-primary" type="submit" type="submit" value="Submit">
+                        <button type="submit" name="insert" value="${users.id}">Indsæt</button>
                     </td>
                     </form>
                     <td>
