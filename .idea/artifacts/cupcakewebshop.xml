@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="cupcakewebshop">
+    <output-path>$PROJECT_DIR$/out/artifacts/cupcakewebshop</output-path>
+    <root id="root" />
+  </artifact>
+</component>
